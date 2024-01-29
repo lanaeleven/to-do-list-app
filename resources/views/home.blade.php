@@ -8,11 +8,18 @@
   </head>
   <body>
     <div class="container col-8">
+      <div class="d-flex justify-content-end">
+        <a href="/logout" class="btn btn-danger mt-5">Logout</a>
+      </div>
+      
+      <h2 class="text-center mb-5">Hello, {{ $name }}. Lets plan your day!</h2>
+      
 
           <div class="col-4">
             <form action="/storeTodo" method="post">
               @csrf
               <div class="input-group mb-3">
+                <input type="hidden" name="userId" value={{ $userId }}>
                 <input type="text" class="form-control" placeholder="Todo" id="todo" name="todo">
                 <button type="submit" class="btn btn-primary">Add</button>
               </div>
